@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+nav label{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #002de0;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 200px;
+} 
+
+nav label span{
+    width: 20px;
+    background: #002de0;
+    height: 2px;
+}
+
+
+.projects-section {
+    position: relative;
+    overflow: hidden;
+    padding: 55px 4% 65px;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #080d35;
+}
+
+
+
+.projects-section::before {
+    content: "";
+    position: absolute;
+    top: -130px;
+    left: -100px;
+    width: 450px;
+    height: 230px;
+    background: linear-gradient(135deg, #0014cc, #1685ff);
+    border-radius: 50%;
+    transform: rotate(-20deg);
+    z-index: 0;
+}
+
+
+
+.projects-section::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: -80px;
+    width: 650px;
+    height: 230px;
+    background: linear-gradient(120deg, #0015bb, #168cff);
+    border-radius: 50%;
+    transform: rotate(-10deg);
+    z-index: 0;
+}
+
+
+.projects-heading {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 35px;
+}
+
+.heading-line {
+    display: block;
+    width: 110px;
+    height: 7px;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #168cff, #001bd5);
+}
+
+.projects-heading h1 {
+    font-size: 55px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.projects-heading h1 span {
+    color: #0751e9;
+}
+
+.projects-heading p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #101a45;
+}
+
+/* PROJECT CONTAINER */
+
+.projects-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* PROJECT CARD */
+
+.project-card {
+    background: #ffffff;
+    border: 2px solid #dce6ff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 65, 200, 0.08);
+    transition: 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 70, 200, 0.16);
+    border-color: #0751e9;
+}
+
+/* PROJECT IMAGE */
+
+.project-image {
+    width: 100%;
+    height: 265px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* PROJECT CONTENT */
+
+.project-content {
+    padding: 23px 25px 20px;
+}
+
+.project-content h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+    color: #080d35;
+}
+
+.project-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    min-height: 55px;
+    color: #101a45;
+    margin-bottom: 20px;
+}
+
+/* VIEW PROJECT BUTTON */
+
+.project-btn {
+    display: block;
+    width: 65%;
+    margin: 0 auto;
+    padding: 16px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 40px;
+    background: linear-gradient(120deg, #0754ff, #0019d8);
+    box-shadow: 0 8px 15px rgba(0, 65, 255, 0.15);
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: #00149f;
+    transform: scale(1.04);
+}
+
+/* VIEW ALL PROJECTS */
+
+.all-projects {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 45px;
+}
+
+.all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 20px 45px;
+    background: linear-gradient(120deg, #0754ff, #00149f);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(0, 55, 200, 0.2);
+    transition: 0.3s;
+}
+
+.all-btn:hover {
+    transform: translateY(-5px);
+    background: #001078;
+}
+
+.all-btn span {
+    font-size: 28px;
+}
+
+/* TABLET RESPONSIVENESS */
+
+@media (max-width: 1000px) {
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-heading h1 {
+        font-size: 45px;
+    }
+
+    .project-image {
+        height: 220px;
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 650px) {
+
+    .projects-section {
+        padding: 45px 5%;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-heading h1 {
+        font-size: 36px;
+    }
+
+    .projects-heading p {
+        font-size: 15px;
+    }
+
+    .projects-heading p br {
+        display: none;
+    }
+
+    .project-image {
+        height: 230px;
+    }
+
+    .project-content h2 {
+        font-size: 21px;
+    }
+
+    .project-content p {
+        font-size: 16px;
+    }
+
+    .project-btn {
+        width: 80%;
+        font-size: 17px;
+    }
+
+    .all-btn {
+        padding: 16px 28px;
+        font-size: 16px;
+    }
+}
